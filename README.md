@@ -3,7 +3,7 @@
 ![Demo](./demo/demo.gif)
 
 > [!IMPORTANT]
-> Currently working only on MacOS because of the used notification system.
+> Currently only working on MacOS because of the used notification system.
 
 # Installation
 
