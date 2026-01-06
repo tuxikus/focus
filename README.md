@@ -2,8 +2,8 @@
 
 ![Demo](./demo/demo.gif)
 
-[!IMPORTANT]
-Currently working only on MacOS because of the used notification system.
+> [!IMPORTANT]
+> Currently working only on MacOS because of the used notification system.
 
 # Installation
 
