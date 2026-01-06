@@ -2,10 +2,13 @@
 
 ![Demo](./demo/demo.gif)
 
+[!IMPORTANT]
+Currently working only on MacOS because of the used notification system.
+
 # Installation
 
 ```shell
-  $ git clone 
+  $ git clone https://github.com/tuxikus/focus.git
   $ cd focus
   $ cargo install --path .
 ```
