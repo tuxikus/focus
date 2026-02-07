@@ -1,5 +1,4 @@
 use std::io;
-use std::process::Command;
 use std::time::{Duration, Instant};
 
 use clap::Parser;
@@ -123,7 +122,6 @@ impl App {
         let elapsed = self.start.elapsed().as_secs();
 
         if elapsed == self.duration {
-            send_macos_notification();
             self.exit()
         }
     }
@@ -158,21 +156,6 @@ impl Widget for &App {
     }
 }
 
-// workaround for notify-rust
-// currently not working
-fn send_macos_notification() {
-    Command::new("osascript")
-        .args([
-            "-e",
-            r#"display notification "Focus done" with title "Focus""#,
-            "-e",
-            "beep 5",
-        ])
-        .status()
-        .expect("failed to send notification");
-}
-
-#[cfg(target_os = "macos")]
 fn main() -> io::Result<()> {
     let args = Args::parse();
 
@@ -185,9 +168,4 @@ fn main() -> io::Result<()> {
     };
 
     ratatui::run(|terminal| App::new(duration_input.get_duration()).run(terminal))
-}
-
-#[cfg(not(target_os = "macos"))]
-fn main() {
-    println!("platform not supported")
 }
